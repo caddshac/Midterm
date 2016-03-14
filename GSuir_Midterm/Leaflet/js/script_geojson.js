@@ -12,7 +12,7 @@ var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{ty
 
 //Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6", {
-		    	layers: '6',
+		    	/*layers: '6',*/
 		    	format: 'image/png',
 		    	transparent: true,
 		    	attribution: "Emergency Response Centers"
@@ -22,7 +22,7 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 		
 //Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10", {
-		    	layers: '10',
+		    	/*layers: '10',*/
 		    	format: 'image/png',
 		    	transparent: true,
 		    	attribution: "Law Enforcement"
