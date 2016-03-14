@@ -40,19 +40,9 @@
           
           
           
-          var wms = new OpenLayers.Layer.WMS("Hydro",
-               "http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?",
-               {layers:"2"}
-           );
-            map.addLayer(wms);
-          
-          
-          
-          
-          
-          
+  
           //Include a WMS link, layer identifier, and attribute information
-          var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?", {
+          var Streams = new OpenLayers.Layer.WMS("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?", {
 			        layers: '2',
 			        format: 'image/png',
 			        transparent: true,
