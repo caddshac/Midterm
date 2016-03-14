@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>EPA Regions</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
+    <style>
+    html, body, #map {
+      padding:0;
+      margin:0;
+      height:100%;
+    }
+    #BasemapToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+  </style>
+  <script src="https://js.arcgis.com/3.16/"></script>
+
+
+
+  <script>
+  var map;
+    require([
+      "esri/map",
+      "esri/dijit/BasemapToggle",
+      "esri/layers/WMSLayer",
+      "esri/layers/ArcGISDynamicMapServiceLayer",
+      "esri/layers/ImageParameters",
+      "dojo/domReady!"
+    ], function(
+      Map, BasemapToggle, WMSLayer, ArcGISDynamicMapServiceLayer, ImageParameters
+    )  {
+
+
+
+      map = new Map("map", {
+        center: [-95, 38],
+        zoom: 5,
+        basemap: "satellite"
+      });
+
+
+
+
+      var imageParameters = new ImageParameters();
+             imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
+             imageParameters.layerIds = [2, 3];
+             imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+             imageParameters.transparent = true;
+
+      var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://geodata.epa.gov/arcgis/rest/services/OEI/EPA_Locations/MapServer", {
+          "opacity" : 0.7,
+          "imageParameters": imageParameters
+          });
+
+      map.addLayer(dynamicMapServiceLayer);
+
+
+
+
+      var imageParameters = new ImageParameters();
+            imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
+            imageParameters.layerIds = [1, 0];
+            imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+            imageParameters.transparent = true;
+
+      var dynamicMapServiceLayer2 = new ArcGISDynamicMapServiceLayer("http://geodata.epa.gov/arcgis/rest/services/OEI/EPA_Locations/MapServer", {
+          "opacity" : 0.7,
+          "imageParameters": imageParameters
+         });
+
+     map.addLayer(dynamicMapServiceLayer2);
+
+
+
+
+
+
+
+
+
+/*
+      var imageParameters = new ImageParameters();
+            imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
+            imageParameters.layerIds = [4];
+            imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+            imageParameters.transparent = true;
+
+      var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
+          "opacity" : 0.9,
+          "imageParameters": imageParameters
+          });
+
+      map.addLayer(dynamicMapServiceLayer3);*/
+
+
+
+
+      /*var imageParameters = new ImageParameters();
+            imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
+            imageParameters.layerIds = [2, 3, 4, 5, 6, 7];
+            imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
+            imageParameters.transparent = true;
+
+      var layer3 = new esri.layers.ArcGISDynamicMapServiceLayer("http://webservices.nationalatlas.gov/wms/", {
+          "opacity" : 0.9,
+          "imageParameters": imageParameters
+          });
+
+      map.addLayer(layer3);*/
+
+
+
+
+    /*  var Watersheds = new google.maps.KmlLayer({
+          url: 'http://edna.usgs.gov/watersheds/sheds/USWatersheds/USWatersheds.kml',
+          opacity: 0.7,
+          map: map
+
+        });*/
+
+
+
+
+
+
+      var toggle = new BasemapToggle({
+        map: map,
+        basemap: "topo"
+      }, "BasemapToggle");
+      toggle.startup();
+
+    });
+
+
+
+
+
+  </script>
+
+
+
+</head>
+<body>
+  <div id="map" class="map">
+    <div id="BasemapToggle"></div>
+  </div>
+
+</body>
+</html>

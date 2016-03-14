@@ -1,0 +1,11 @@
+/* Create a full-page background image on the Bootstrap "Cover" template 
+ * Cover template: https://getbootstrap.com/examples/cover
+ * CSS code credit: http://stackoverflow.com/questions/25556622/bootstrap-cover-template-where-to-place-image
+ */
+body {
+  background: url(http://www.dentons.com/~/media/Images/Website/Background%20Images/Industry%20Sectors/Energy/oilandgas2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

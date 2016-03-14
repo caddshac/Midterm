@@ -1,0 +1,51 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Critical Habitat Google Map</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: {lat: 38, lng: -95}
+      });
+
+      var ctaLayer = new google.maps.KmzLayer({
+        url: 'http://ecos.fws.gov/arcgis/rest/services/crithab/usfwsCriticalHabitat/MapServer/kml/mapImage.kmz',
+        map: map
+      });
+
+
+      var kml1 = new google.maps.KmlLayer({
+        url: 'http://example.com/layer1.kmz',
+        preserveViewport: true // setting to true will prevent the map from zooming to this layer
+        });
+        kml1.setMap( map );
+      });
+
+
+        //var kml2 = new google.maps.KmlLayer({
+          //url: 'http://ecos.fws.gov/arcgis/rest/services/crithab/usfwsCriticalHabitat/MapServer/kml/mapImage.kmz',
+          //preserveViewport: true // setting to true will prevent the map from zooming to this layer
+        //});
+        //kml2.setMap( map );
+
+
+    </script>
+
+    <script src="http://maps.google.com/maps/api/staticmap"></script>
+  </body>
+</html>
