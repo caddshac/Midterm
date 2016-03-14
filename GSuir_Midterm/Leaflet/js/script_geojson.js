@@ -10,7 +10,7 @@ var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{ty
 
 		}).addTo(map);
 
-// Include a WMS link, layer identifier, and attribute information
+//Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?", {
 		    	layers: '7',
 		    	format: 'image/png',
@@ -26,35 +26,19 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 			attribution: "Streams and Rivers"
 		}).addTo(map);
 
-/* Include a WMS link, layer identifier, and attribute information
-var Facilities = L.tileLayer.wms("http://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_relhumidity_offsets/MapServer/WMSServer", {
-				layers: '1',
-				format: 'image/png',
-				transparent: true,
-				attribution: "Petroleum Facilities",
-				opacity: 0.25
-		}).addTo(map);*/
 
 
-
-
-/*
-* Get GeoJSON data from an external website using jQuery's getJSON function.
-*
+/* Get GeoJSON data from an external website using jQuery's getJSON function.
 	* function: getJSON
-	* documentation: http://api.jquery.com/jquery.getjson/
-*/
+	* documentation: http://api.jquery.com/jquery.getjson*/
 
-$.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-// code to do something with geojsonFeatures goes here, such as the L.geoJson function with the onEachFeature option
+$.getJSON("http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
 				L.geoJson(geojsonFeature, {
 				onEachFeature: myfunction
 		}).addTo(map);
 
 
-
-		});
-
+});
 
 
 
@@ -68,7 +52,7 @@ var baseLayers = {
 var overlays = {
 				    "Emergency Response Centers": EmergencyResponse,
 				    "Streams": Streams,
-						"Petroleum Facilities": Facilities
+				    "Petroleum Facilities": Facilities
 				};
 
 L.control.layers(baseLayers, overlays).addTo(map);
