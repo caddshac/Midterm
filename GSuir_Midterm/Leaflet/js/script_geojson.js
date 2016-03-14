@@ -39,22 +39,17 @@ var Facilities = L.tileLayer.wms("http://nowcoast.noaa.gov/arcgis/services/nowco
 
 
 
-				 /*
-		 		* Get GeoJSON data from an external website using jQuery's getJSON function.
-		 	  *
-		 		* function: getJSON
-		 		* documentation: http://api.jquery.com/jquery.getjson/
-		 		*/
+/** Get GeoJSON data from an external website using jQuery's getJSON function.
+ * *
+* function: getJSON
+* documentation: http://api.jquery.com/jquery.getjson/
+*/
+	$.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
+// code to do something with geojsonFeatures goes here, such as the L.geoJson function with the onEachFeature option
+	L.geoJson(geojsonFeature, {
+	onEachFeature: myfunction
+}).addTo(map);
 
-		 		$.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-		 		// code to do something with geojsonFeatures goes here, such as the L.geoJson function with the onEachFeature option
-		 		L.geoJson(geojsonFeature, {
-		 		   onEachFeature: myfunction
-		 		}).addTo(map);
-
-
-
-		});
 
 
 
