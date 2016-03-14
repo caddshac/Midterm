@@ -19,12 +19,7 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 		}).addTo(map);
 
 //Include a WMS link, layer identifier, and attribute information
-var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?", {
-			layers: '2',
-			format: 'image/png',
-			transparent: true,
-			attribution: "Streams and Rivers"
-		}).addTo(map);
+
 
 
 /*
