@@ -9,6 +9,9 @@ var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{ty
 	subdomains: '1234'
 
 		}).addTo(map);
+		
+		
+		
 
 // Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?", {
@@ -18,17 +21,21 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 		    	attribution: "Emergency Response Centers"
 		}).addTo(map);
 
-//Include a WMS link, layer identifier, and attribute information
+// Include a WMS link, layer identifier, and attribute information
+var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?", {
+		    	layers: '6',
+		    	format: 'image/png',
+		    	transparent: true,
+		    	attribution: "Emergency Response Centers"
+		}).addTo(map);
 
 
 
 /*
 * Get GeoJSON data from an external website using jQuery's getJSON function.
-*
 	* function: getJSON
 	* documentation: http://api.jquery.com/jquery.getjson/
 */
-
 $.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
 // code to do something with geojsonFeatures goes here, such as the L.geoJson function with the onEachFeature option
 				L.geoJson(geojsonFeature, {
@@ -36,11 +43,7 @@ $.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaf
 		}).addTo(map);
 
 
-
-		});
-
-
-
+});
 
 
 
