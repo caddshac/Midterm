@@ -23,7 +23,7 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 				layers: '2',
 				format: 'image/png',
 				transparent: true,
-				attribution: "Streams and Rivers"
+				attribution: "Streams"
 		}).addTo(map);
 
 /* Include a WMS link, layer identifier, and attribute information
