@@ -24,6 +24,15 @@
           center: {lat: 38, lng: -95},
           zoom: 6
         });
+          
+          var Hydro = new google.maps.KmlLayer({
+              url: 'http://services.nationalmap.gov/ArcGIS/rest/services/nhd/MapServer',
+              opacity: 0.7,
+              map: map
+            });   
+          
+          
+          
           var Watersheds = new google.maps.KmlLayer({
               url: 'http://edna.usgs.gov/watersheds/sheds/USWatersheds/USWatersheds.kml',
               opacity: 0.7,
@@ -32,18 +41,10 @@
            
            
            
-          var Hydro = new google.maps.KmlLayer({
-              url: 'http://services.nationalmap.gov/ArcGIS/rest/services/nhd/MapServer',
-              opacity: 0.7,
-              map: map
-            });   
+          
            
            
            
-         /*  
-          var Fedlands = new GGroundOverlay("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?");
-              map.addOverlay(oldmap)
-            });  */
 }
     </script>
 
