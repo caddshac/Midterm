@@ -26,17 +26,6 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 			attribution: "Streams and Rivers"
 		}).addTo(map);
 
-/* Include a WMS link, layer identifier, and attribute information
-var Facilities = L.tileLayer.wms("http://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_relhumidity_offsets/MapServer/WMSServer", {
-				layers: '1',
-				format: 'image/png',
-				transparent: true,
-				attribution: "Petroleum Facilities",
-				opacity: 0.25
-		}).addTo(map);*/
-
-
-
 
 /*
 * Get GeoJSON data from an external website using jQuery's getJSON function.
