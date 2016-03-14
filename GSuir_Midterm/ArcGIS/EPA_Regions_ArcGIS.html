@@ -85,23 +85,19 @@
 
 
 
-     /* var imageParameters = new ImageParameters();
+      var imageParameters = new ImageParameters();
             imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
-            imageParameters.layerIds = [14];
+            imageParameters.layerIds = [2, 6, 8, 14];
             imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
-            imageParameters.transparent = true;*/
+            imageParameters.transparent = true;
 
-      var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
-            LayerParameters.layerIds = [14];
-      map.addLayer(layer);
       
-      
-      /*var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
+      var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer", {
           "opacity" : 0.9,
           "imageParameters": imageParameters
           });
 
-      map.addLayer(dynamicMapServiceLayer3);*/
+      map.addLayer(dynamicMapServiceLayer3);
 
 
 
