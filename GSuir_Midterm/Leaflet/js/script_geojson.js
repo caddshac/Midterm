@@ -36,25 +36,13 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 	* function: getJSON
 	* documentation: http://api.jquery.com/jquery.getjson/
 */
-geojsonFeature = {
-				"type": "FeatureCollection",
-				"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-				"features": [
-					$.getJSON( "http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-				]
-			};
-			
-			function myfunction(feature, layer) {
-			  if (feature.properties) {
-				var html = feature.properties.Name  + "<br>" + "<br>" + feature.properties.Caption +
-				  '<a href=' + feature.properties.URL + '><img src="' + feature.properties.Thumb_URL + '"></a>';
-				layer.bindPopup(html);
-				}
-		}
-			
-			L.geoJson(geojsonFeature, {
+	$.getJSON( "http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
+   			L.geoJson(geojsonFeature, {
 			onEachFeature: myfunction
 			}).addTo(map);
+ }); 
+		
+			
 
 
 });
