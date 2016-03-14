@@ -46,7 +46,7 @@ var Facilities = L.tileLayer.wms("http://nowcoast.noaa.gov/arcgis/services/nowco
 		 		* documentation: http://api.jquery.com/jquery.getjson/
 		 		*/
 
-		 		$.getJSON( "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson", function( geojsonFeature ) {
+		 		$.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
 		 		// code to do something with geojsonFeatures goes here, such as the L.geoJson function with the onEachFeature option
 		 		L.geoJson(geojsonFeature, {
 		 		   onEachFeature: myfunction
