@@ -40,13 +40,11 @@
           
           
           
-          var Hydro = new OpenLayers.Layer.WMS(
-               "Hydro",
+          var wms = new OpenLayers.Layer.WMS("Hydro",
                "http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?",
-               {/*layers:"2",*/ 
-               transparent: true}
+               {layers:"2"}
            );
-            map.addLayer(Hydro);
+            map.addLayer(wms);
           
          
          
