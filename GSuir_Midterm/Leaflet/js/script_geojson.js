@@ -40,7 +40,7 @@ geojsonFeature = {
 				"type": "FeatureCollection",
 				"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 				"features": [
-					$.getJSON( "https://github.com/caddshac/Midterm/blob/gh-pages/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
+					$.getJSON( "http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
 				]
 			};
 			
