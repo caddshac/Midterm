@@ -17,6 +17,19 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 		    	transparent: true,
 		    	attribution: "Emergency Response Centers"
 		}).addTo(map);
+	
+		
+		
+//Include a WMS link, layer identifier, and attribute information
+var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10", {
+		    	layers: '10',
+		    	format: 'image/png',
+		    	transparent: true,
+		    	attribution: "Law Enforcement"
+		}).addTo(map);
+
+
+
 
 //Include a WMS link, layer identifier, and attribute information
 var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer?", {
