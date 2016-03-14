@@ -31,9 +31,8 @@
             });
            
            
-           var FederalLands = new google.maps.WMSLayer({
-              url: 'http://184.73.173.124/ArcGIS/services/USA_Federal_Lands/MapServer/WMSServer',
-              opacity: 0.7,
+           var layer = new google.layer("http://maps1.arcgisonline.com/ArcGIS/rest/services/USA_Federal_Lands/MapServer");
+            map.addLayer(layer);
               map: map
             });
 }
