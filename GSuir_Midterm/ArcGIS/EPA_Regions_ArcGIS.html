@@ -90,12 +90,17 @@
             imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
             imageParameters.transparent = true;
 
-      var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
+      var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
+      
+    map.addLayer(layer);
+      
+      
+      /*var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
           "opacity" : 0.9,
           "imageParameters": imageParameters
           });
 
-      map.addLayer(dynamicMapServiceLayer3);
+      map.addLayer(dynamicMapServiceLayer3);*/
 
 
 
