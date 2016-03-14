@@ -30,6 +30,16 @@
               map: map
             });
            
+           
+           
+          var Hydro = new google.maps.KmlLayer({
+              url: 'http://services.nationalmap.gov/ArcGIS/rest/services/nhd/MapServer',
+              opacity: 0.7,
+              map: map
+            });   
+           
+           
+           
          /*  
           var Fedlands = new GGroundOverlay("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?");
               map.addOverlay(oldmap)
