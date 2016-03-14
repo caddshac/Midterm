@@ -40,10 +40,11 @@
 
 
 
-            /* This uses cross-domain XHR, and may not work on older browsers.
-            map.data.loadGeoJson('https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/USA_Detailed_Streams/FeatureServer/0?f=pjson');
-          }*/
-
+            var Fedlands = new google.maps.WMSLayer({
+            url: 'http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?'
+            opacity: 0.7,
+            map: map
+            });
 
 
 }
