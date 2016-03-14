@@ -30,9 +30,10 @@
       "esri/layers/WMSLayer",
       "esri/layers/ArcGISDynamicMapServiceLayer",
       "esri/layers/ImageParameters",
+      "esri/layers/LayerParameters",
       "dojo/domReady!"
     ], function(
-      Map, BasemapToggle, WMSLayer, ArcGISDynamicMapServiceLayer, ImageParameters
+      Map, BasemapToggle, WMSLayer, ArcGISDynamicMapServiceLayer, ImageParameters, LayerParameters
     )  {
 
 
@@ -91,8 +92,8 @@
             imageParameters.transparent = true;*/
 
       var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
-      
-    map.addLayer(layer);
+            LayerParameters.layerIds = [14];
+      map.addLayer(layer);
       
       
       /*var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
