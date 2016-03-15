@@ -23,7 +23,7 @@ var streets = L.tileLayer( 'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 var featuregroup = L.layerGroup();
 
 function addpopup( feature, layer ){
-  var html = feature.properties.Name;
+  var html = feature.properties.Name + "Facility";
   layer.bindPopup( html );
 
   // NEW: add the current facility point to the group
