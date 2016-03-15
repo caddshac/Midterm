@@ -65,7 +65,7 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 var datalayers = {
   "Facilities": featuregroup
-  "Law Enforcement": featuregroup
+  "Emergency Response": EmergencyResponse
   
 };
 
