@@ -49,6 +49,7 @@
           "imageParameters": imageParameters
           });
       map.addLayer(dynamicMapServiceLayer);
+      
       var imageParameters = new ImageParameters();
             imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
             imageParameters.layerIds = [1, 0];
@@ -59,14 +60,17 @@
           "imageParameters": imageParameters
          });
      map.addLayer(dynamicMapServiceLayer2);
-     /* var imageParameters = new ImageParameters();
+     
+      var imageParameters = new ImageParameters();
             imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
-            imageParameters.layerIds = [14];
+            imageParameters.layerIds = [4];
             imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
-            imageParameters.transparent = true;*/
-      var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
-      
-    map.addLayer(layer);
+            imageParameters.transparent = true;
+      var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
+            "opacity" : 1.0,
+            "imageParameters": imageParameters
+         });
+    map.addLayer(dynamicMapServiceLayer3);
       
       
       /*var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
