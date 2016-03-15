@@ -77,4 +77,4 @@ var baselayers = {
 
 
 
-L.control.layers( baselayer, datalayers ).addTo( map );
+L.control.layers( baselayers, datalayers ).addTo( map );
