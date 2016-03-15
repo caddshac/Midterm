@@ -11,7 +11,7 @@ var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{
 	subdomains: '1234'
 });
 
-/*
+
 //Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
 		    	layers: '9',
@@ -36,7 +36,7 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 			transparent: true,
 			attribution: "Streams and Rivers"
 		}).addTo(map);
-*/
+
 
 // NEW: create an object to hold the group of earthquake points
 var featuregroup = L.layerGroup();
