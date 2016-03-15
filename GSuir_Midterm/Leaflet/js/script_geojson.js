@@ -1,4 +1,4 @@
-var map = L.map( 'map' ).setView( [33.95,-98.69], 11 );
+var map = L.map( 'map' ).setView( [33.94,-98.69], 11 );
 
 
 var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
