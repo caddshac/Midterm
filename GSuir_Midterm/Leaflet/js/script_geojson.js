@@ -13,7 +13,7 @@ var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{
 
 
 
-/*
+
 // NEW: create an object to hold the group of facility points
 var featuregroup = L.layerGroup();
 
@@ -25,14 +25,14 @@ function addpopup( feature, layer ){
   featuregroup.addLayer( layer );
 }
 
-$.getJSON( "/*http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeatures ){
+$.getJSON( http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson, function( geojsonFeatures ){
   L.geoJson( geojsonFeatures, { onEachFeature: addpopup } ).addTo(map);
 });
 
 // NEW: add the group of facility points to the map.
 featuregroup.addTo( map );
 
-*/
+
 
 
 //Include a WMS link, layer identifier, and attribute information
