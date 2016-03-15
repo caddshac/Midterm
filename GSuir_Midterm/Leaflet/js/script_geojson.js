@@ -1,14 +1,15 @@
-// Create a map object and specify the center lat/lon and zoom level
-var map = L.map('map').setView([33.8, -98.68], 10);
+var map = L.map( 'map' ).setView( [30,-90], 4 );
 
-// Include a basemap layer for this webservice
-var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
+var streets = L.tileLayer( 'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo( map );
+
+var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
 	type: 'sat',
 	ext: 'jpg',
 	attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
 	subdomains: '1234'
-
-		}).addTo(map);
+});
 
 //Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
@@ -54,26 +55,27 @@ function myfunction(feature, layer) {
 
 
 $.getJSON("http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-			L.geoJson(geojsonFeature, {
-			onEachFeature: myfunction
-		}).addTo(map);
+	L.geoJson(geojsonFeature, {
+	onEachFeature: myfunction}).addTo(map);
 
 
 });
 
 
 
-
+// NEW: add the group of facility points to the map.
+featuregroup.addTo( map );
 
 // Create an object with Layers for each basemap
-var baseLayers = {
-				    "MapQuestOpen_Aerial": MapQuestOpen_Aerial
-				};
+var baselayers = {
+  "Streets": streets,
+  "Satellite": satellite
+};
 
 var overlays = {
-				    "Emergency Response Centers": EmergencyResponse,
-				    "Streams": Streams,
-				    "Petroleum Facilities": Facilities
-				};
+	"Emergency Response Centers": EmergencyResponse,
+	"Streams": Streams,
+	"Petroleum Facilities": Facilities
+};
 
 L.control.layers(baseLayers, overlays).addTo(map);
