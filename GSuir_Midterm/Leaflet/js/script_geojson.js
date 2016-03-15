@@ -64,8 +64,8 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 
 var datalayers = {
-  "Facilities": featuregroup,
-  "Emergency Response": EmergencyResponse
+  "Emergency Response": EmergencyResponse,
+  "Facilities": featuregroup
   
 };
 
@@ -77,4 +77,4 @@ var baselayers = {
 
 
 
-L.control.layers( datalayers, baselayers ).addTo( map );
+L.control.layers( baselayer, datalayers ).addTo( map );
