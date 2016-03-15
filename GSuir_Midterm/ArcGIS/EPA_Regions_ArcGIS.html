@@ -39,6 +39,7 @@
         zoom: 5,
         basemap: "satellite"
       });
+      
       var imageParameters = new ImageParameters();
              imageParameters.format = "PNG24"; //set the image type to PNG24, note default is PNG8.
              imageParameters.layerIds = [2, 3];
@@ -66,11 +67,11 @@
             imageParameters.layerIds = [4];
             imageParameters.layerOption = ImageParameters.LAYER_OPTION_SHOW;
             imageParameters.transparent = true;
-      var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
+      var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/rest/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer");
             "opacity" : 1.0,
             "imageParameters": imageParameters
          });
-    map.addLayer(dynamicMapServiceLayer3);
+    map.addLayer(layer);
       
       
       /*var dynamicMapServiceLayer3 = new ArcGISDynamicMapServiceLayer("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleBoundariesWMS/MapServer/WmsServer?", {
