@@ -74,8 +74,8 @@ var datalayers = {
 
 
 var baselayers = {
+  "Satellite": satellite,
   "Streets": streets,
-  "Satellite": satellite
 };
 
 
