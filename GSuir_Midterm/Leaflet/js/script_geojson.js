@@ -46,7 +46,7 @@ var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/
 		
 		
 //Include a WMS link, layer identifier, and attribute information
-var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
+var LawEnforcement = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
 		    	layers: '10',
 		    	format: 'image/png',
 		    	transparent: true,
@@ -64,8 +64,11 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 
 var datalayers = {
+  
+  "Facilities": featuregroup,
   "Emergency Response": EmergencyResponse,
-  "Facilities": featuregroup
+  "Law Enforcement": LawEnforcement,
+  "Streams": Streams
   
 };
 
