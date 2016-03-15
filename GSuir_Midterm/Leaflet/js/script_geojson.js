@@ -18,7 +18,7 @@ var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{
 var featuregroup = L.layerGroup();
 
 function addpopup( feature, layer ){
-  var html = Name;
+  var html = feature.properties.name;
   layer.bindPopup( html );
 
   // NEW: add the current facility point to the group
