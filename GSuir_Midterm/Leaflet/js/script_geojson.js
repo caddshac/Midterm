@@ -44,10 +44,18 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 /* Get GeoJSON data from an external website using jQuery's getJSON function.
 	* function: getJSON
 	* documentation: http://api.jquery.com/jquery.getjson*/
+function myfunction(feature, layer) {
+			  if (feature.properties) {
+				var html = feature.properties.Name  + "<br>" + "<br>" + feature.properties.Caption +
+				  '<a href=' + feature.properties.URL + '><img src="' + feature.properties.Thumb_URL + '"></a>';
+				layer.bindPopup(html);
+				}
+		}
+
 
 $.getJSON("http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-				L.geoJson(geojsonFeature, {
-				onEachFeature: myfunction
+			L.geoJson(geojsonFeature, {
+			onEachFeature: myfunction
 		}).addTo(map);
 
 
