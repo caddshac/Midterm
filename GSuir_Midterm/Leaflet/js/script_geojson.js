@@ -38,22 +38,22 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 		}).addTo(map);
 
 
-// NEW: create an object to hold the group of earthquake points
+// NEW: create an object to hold the group of facility points
 var featuregroup = L.layerGroup();
 
 function addpopup( feature, layer ){
-  var html = feature.properties.mag + " magnitude, " + feature.properties.place;
+  var html = feature.properties.mag + " facility, " + feature.properties.place;
   layer.bindPopup( html );
 
-  // NEW: add the current earthquake point to the group
+  // NEW: add the current facility point to the group
   featuregroup.addLayer( layer );
 }
 
-$.getJSON( "/*http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson*/http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson", function( geojsonFeatures ){
+$.getJSON( "/*http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeatures ){
   L.geoJson( geojsonFeatures, { onEachFeature: addpopup } ).addTo(map);
 });
 
-// NEW: add the group of earthquake points to the map.
+// NEW: add the group of facility points to the map.
 featuregroup.addTo( map );
 
 var baselayers = {
@@ -62,7 +62,7 @@ var baselayers = {
 };
 
 var datalayers = {
-  "Earthquakes": featuregroup
+  "Facilities": featuregroup
 };
 
 L.control.layers( baselayers, datalayers ).addTo( map );
