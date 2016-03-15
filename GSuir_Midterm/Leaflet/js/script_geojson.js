@@ -42,6 +42,18 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 
 
+
+
+// NEW: create an object to hold the group of facility points
+var featuregroup = L.layerGroup();
+
+function addpopup( feature, layer ){
+  var html = feature.properties.mag + " Facility, " + feature.properties.place;
+  layer.bindPopup( html );
+
+  // NEW: add the current facility point to the group
+  featuregroup.addLayer( layer );
+
 /* Get GeoJSON data from an external website using jQuery's getJSON function.
 	* function: getJSON
 	* documentation: http://api.jquery.com/jquery.getjson*/
