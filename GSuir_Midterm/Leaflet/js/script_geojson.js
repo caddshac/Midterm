@@ -1,4 +1,4 @@
-var map = L.map( 'map' ).setView( [38,-92], 5 );
+var map = L.map( 'map' ).setView( [30,-90], 4 );
 
 var streets = L.tileLayer( 'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -42,52 +42,31 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 
 
-
-
-// NEW: create an object to hold the group of facility points
+// NEW: create an object to hold the group of earthquake points
 var featuregroup = L.layerGroup();
 
 function addpopup( feature, layer ){
-  var html = feature.properties.mag + " Facility, " + feature.properties.place;
+  var html = feature.properties.mag + " magnitude, " + feature.properties.place;
   layer.bindPopup( html );
 
-  // NEW: add the current facility point to the group
+  // NEW: add the current earthquake point to the group
   featuregroup.addLayer( layer );
+}
 
-/* Get GeoJSON data from an external website using jQuery's getJSON function.
-	* function: getJSON
-	* documentation: http://api.jquery.com/jquery.getjson*/
-/*function myfunction(feature, layer) {
-			  if (feature.properties) {
-				var html = feature.properties.Name  + "<br>" + "<br>" + feature.properties.Caption +
-				  '<a href=' + feature.properties.URL + '><img src="' + feature.properties.Thumb_URL + '"></a>';
-				layer.bindPopup(html);
-				}
-		}*/
-
-
-$.getJSON("http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeature ) {
-	L.geoJson(geojsonFeature, {
-	onEachFeature: myfunction}).addTo(map);
-
-
+$.getJSON( "http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeatures ){
+  L.geoJson( geojsonFeatures, { onEachFeature: addpopup } ).addTo(map);
 });
 
-
-
-// NEW: add the group of facility points to the map.
+// NEW: add the group of earthquake points to the map.
 featuregroup.addTo( map );
 
-// Create an object with Layers for each basemap
 var baselayers = {
   "Streets": streets,
   "Satellite": satellite
 };
 
-var overlays = {
-	"Emergency Response Centers": EmergencyResponse,
-	"Streams": Streams,
-	"Petroleum Facilities": Facilities
+var datalayers = {
+  "Earthquakes": featuregroup
 };
 
-L.control.layers(baseLayers, overlays).addTo(map);
+L.control.layers( baselayers, datalayers ).addTo( map );
