@@ -12,30 +12,6 @@ var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{
 });
 
 
-//Include a WMS link, layer identifier, and attribute information
-var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
-		    	layers: '9',
-		    	format: 'image/png',
-		    	transparent: true,
-		    	attribution: "Emergency Response Centers"
-		}).addTo(map);
-	
-		
-		
-//Include a WMS link, layer identifier, and attribute information
-var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
-		    	layers: '10',
-		    	format: 'image/png',
-		    	transparent: true,
-		    	attribution: "Law Enforcement"
-		}).addTo(map);
-//Include a WMS link, layer identifier, and attribute information
-var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer", {
-			layers: '2',
-			format: 'image/png',
-			transparent: true,
-			attribution: "Streams and Rivers"
-		}).addTo(map);
 
 
 // NEW: create an object to hold the group of facility points
@@ -56,6 +32,38 @@ $.getJSON( "/*http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petr
 // NEW: add the group of facility points to the map.
 featuregroup.addTo( map );
 
+
+
+
+//Include a WMS link, layer identifier, and attribute information
+var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
+		    	layers: '9',
+		    	format: 'image/png',
+		    	transparent: true,
+		    	attribution: "Emergency Response Centers"
+		}).addTo(map);
+	
+		
+		
+//Include a WMS link, layer identifier, and attribute information
+var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
+		    	layers: '10',
+		    	format: 'image/png',
+		    	transparent: true,
+		    	attribution: "Law Enforcement"
+		}).addTo(map);
+		
+//Include a WMS link, layer identifier, and attribute information
+var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/SmallScale1Million/SmallScaleHydrographyWMS/MapServer/WmsServer", {
+			layers: '2',
+			format: 'image/png',
+			transparent: true,
+			attribution: "Streams and Rivers"
+		}).addTo(map);
+
+
+
+
 var baselayers = {
   "Streets": streets,
   "Satellite": satellite
@@ -63,6 +71,7 @@ var baselayers = {
 
 var datalayers = {
   "Facilities": featuregroup
+  
 };
 
 L.control.layers( baselayers, datalayers ).addTo( map );
