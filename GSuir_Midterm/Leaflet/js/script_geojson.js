@@ -30,7 +30,7 @@ function addpopup( feature, layer ){
   featuregroup.addLayer( layer );
 }
 
-$.getJSON( "http://caddshac.github.io/Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeatures ){
+$.getJSON( "http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petro_Facilities.geojson", function( geojsonFeatures ){
   L.geoJson( geojsonFeatures, { onEachFeature: addpopup } ).addTo(map);
 });
 
