@@ -13,7 +13,7 @@ var satellite = L.tileLayer( 'http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{
 
 
 
-
+/*
 // NEW: create an object to hold the group of facility points
 var featuregroup = L.layerGroup();
 
@@ -32,7 +32,7 @@ $.getJSON( "/*http://caddshac.github.io/Midterm/GSuir_Midterm/Leaflet/Texas_Petr
 // NEW: add the group of facility points to the map.
 featuregroup.addTo( map );
 
-
+*/
 
 
 //Include a WMS link, layer identifier, and attribute information
