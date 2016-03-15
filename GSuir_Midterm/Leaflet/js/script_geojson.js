@@ -42,7 +42,7 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 var featuregroup = L.layerGroup();
 
 function addpopup( feature, layer ){
-  var html = feature.properties.mag + " facility, " + feature.properties.place;
+  var html = name + " facility, " + name;
   layer.bindPopup( html );
 
   // NEW: add the current facility point to the group
