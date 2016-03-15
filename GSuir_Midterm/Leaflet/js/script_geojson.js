@@ -12,7 +12,7 @@ var MapQuestOpen_Aerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{ty
 
 //Include a WMS link, layer identifier, and attribute information
 var EmergencyResponse = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/structures/MapServer/WmsServer", {
-		    	layers: '7',
+		    	layers: '9',
 		    	format: 'image/png',
 		    	transparent: true,
 		    	attribution: "Emergency Response Centers"
