@@ -63,15 +63,17 @@ var Streams = L.tileLayer.wms("http://services.nationalmap.gov/arcgis/services/S
 
 
 
+var datalayers = {
+  "Facilities": featuregroup
+  
+};
+
 
 var baselayers = {
   "Streets": streets,
   "Satellite": satellite
 };
 
-var datalayers = {
-  "Facilities": featuregroup
-  
-};
 
-L.control.layers( baselayers, datalayers ).addTo( map );
+
+L.control.layers( baselayers, /*datalayers*/ ).addTo( map );
